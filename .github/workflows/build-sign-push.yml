@@ -26,6 +26,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Normalizar nombre de imagen
+        run: echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"
+
       # TODO (Fase 2): setup-qemu-action y setup-buildx-action para multi-arch
 
       - name: Login a GHCR
